@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "eval:prompts": {
+      "cache": false
+    },
+    "rag:ingest": {
+      "cache": false
+    },
+    "images:upload": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
